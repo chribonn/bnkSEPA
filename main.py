@@ -3,7 +3,7 @@
 #  Version 7.0
 #  January 2020
 
-import argparse, procZip, procXlsx
+import argparse, procZip, procXlsx, secrets
 import tempfile
 
 # Get the argument of the number to process
@@ -16,8 +16,8 @@ args = parser.parse_args()
 print ('Processing :', args.zippath, "\\", args.zipname)
 
 # The following details will be extracted from the user's database record
-xlname = 'BOV SEPA.xlsx'  # the name of the file to look for in the zip archive
-zippass = 'ABCD1234'      # this is the archive the zip file will be protected with
+xlname = 'BOV SEPA.xlsx'             # the name of the file to look for in the zip archive
+zippass = secrets.TMP_ZIPPASS()      # this is the archive the zip file will be protected with. Eventually it will be read from a database.
 
 # Extract the Zip
 with tempfile.TemporaryDirectory() as tmpdirname:
