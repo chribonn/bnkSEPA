@@ -1,4 +1,7 @@
-import openpyxl, datetime, os, pyminizip
+import openpyxl
+import datetime
+import os
+import pyminizip
 import lxml.etree as etree
 
 
@@ -6,7 +9,7 @@ def procXL(zip_path, xlsx_file, tempdir):
     workbook = openpyxl.load_workbook(filename=xlsx_file, data_only=True)
     # check that the required sheets are in the Excel File
     setXLFiles = set(workbook.sheetnames)
-    if not {'Security', 'Credit Instruction Record', 'Payment Information Record', 'Header Record',
+    if not {'Control', 'Credit Instruction Record', 'Payment Information Record', 'Header Record',
             'Control Data'}.issubset(setXLFiles):
         raise Exception('The XL File is not structure properly')
 
@@ -17,16 +20,21 @@ def procXL(zip_path, xlsx_file, tempdir):
     }
     root = etree.Element('Document', nsmap=nsmap)
 
+    # Fill in the Computed MsgId and PmtInfld to (necessary if the user leaves these blank)
+    sh = workbook['Control Data']
+    computedMsgId = sh['B18'].value
+    computedPmtInfld = sh['B20'].value
+
     CstmrCdtTrfInitn = etree.SubElement(root, 'CstmrCdtTrfInitn')
 
     # Header Record
-    CstmrCdtTrfInitn = bldHeader(CstmrCdtTrfInitn, workbook)
+    CstmrCdtTrfInitn = bldHeader(CstmrCdtTrfInitn, computedMsgId, workbook)
 
     # This tag covers both PIR and CIR sections
     PmtInf = etree.SubElement(CstmrCdtTrfInitn, "PmtInf")
 
     # Payment Information Record
-    PmtInf = bldPIR(PmtInf, workbook)
+    PmtInf = bldPIR(PmtInf, computedPmtInfld, workbook)
 
     # Credit Instruction Record
     PmtInf = bldCIR(PmtInf, workbook)
@@ -34,7 +42,7 @@ def procXL(zip_path, xlsx_file, tempdir):
     datastr = etree.tostring(root, xml_declaration=True, encoding='utf-8', pretty_print=True)
 
     # Get the name of the XML file that will store the transactions
-    sh = workbook['Security']
+    sh = workbook['Control']
     bovPass = sh['A2'].value
     if bovPass is None or bovPass.strip() == '':
         raise Exception('Invalid SCTE archive password')
@@ -129,17 +137,24 @@ def bldCIRrow(sh, PmtInf, workbook, row):
     Cd = etree.SubElement(Purp, "Cd")
     Cd.text = sCd
     RmtInf = etree.SubElement(CdtTrfTxInf, "RmtInf")
-    Ustrd = etree.SubElement(RmtInf, "RmtInf")
+    Ustrd = etree.SubElement(RmtInf, "Ustrd")
     Ustrd.text = sUstrd
 
     return PmtInf
 
 
-def bldPIR(PmtInf, workbook):
+def bldPIR(PmtInf, computedPmtInfld, workbook):
     sh = workbook['Payment Information Record']
 
     # Read the Fields from this worksheet
-    sPmtInfId = sh['A5'].value.strip()
+    sPmtInfId = sh['A5'].value
+    if sPmtInfId is None:
+        sPmtInfId = computedPmtInfld
+    sPmtInfId = sPmtInfId.strip()
+    # Cechk for a space condition
+    if sPmtInfId == '':
+        sPmtInfId = computedPmtInfld.strip()
+
     sPmtMtd = sh['B5'].value.strip()
     sBtchBookg = sh['C5'].value.strip()
     sNbOfTxs = str(int(sh['D5'].value))
@@ -204,12 +219,19 @@ def bldPIR(PmtInf, workbook):
     return PmtInf
 
 
-def bldHeader(CstmrCdtTrfInitn, workbook):
+def bldHeader(CstmrCdtTrfInitn, computedMsgId, workbook):
     sh = workbook['Header Record']
 
     # Read the Fields from this worksheet
-    sMsgId = sh['A5'].value.strip()
-    sCreDtTm = datetime.datetime.strptime(str(sh['B5'].value), "%Y-%m-%d %H:%M:%S").replace(microsecond=0).isoformat()
+    sMsgId = sh['A5'].value
+    if sMsgId is None:
+        sMsgId = computedMsgId
+    sMsgId = sMsgId.strip()
+    # check for a space condition
+    if sMsgId == '':
+        sMsgId = computedMsgId.strip()
+
+    sCreDtTm = datetime.datetime.strptime(str(sh['B5'].value), "%Y-%m-%d %H:%M:%S.%f").replace(microsecond=0).isoformat()
     sNbOfTxs = str(int(sh['C5'].value))
     sCtrlSum = '{0:.2f}'.format(sh['D5'].value)
     sNm = sh['E5'].value.strip()

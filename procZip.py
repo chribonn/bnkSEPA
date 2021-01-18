@@ -1,4 +1,4 @@
-import os, zipfile, tempfile
+import os, zipfile
 
 def extractXL(zip_path, zip_file, zip_pass, xl_file, tmpdirname):
     procFile = os.path.join(zip_path, zip_file)

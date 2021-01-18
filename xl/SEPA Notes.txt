@@ -1,0 +1,16 @@
+Dear Chris,
+
+Please note that Direct Credit file GAM002 has been tested successfully.
+
+We kindly ask you to take note of the following points prior of submitting files through Internet Banking:-
+
+·        Avoid submitting files reading value date of Saturday's, Sunday's or Public Holidays.
+·        Files are to be submitted with a requested execution date of Monday to Friday.
+·        BOV Account holders will be paid on the requested execution date. Payments in favour of third party banks will be paid on the subsequent business day. In the case of weekend funds will be received by other banks on the subsequent business day.
+·        The Cut-off time for submitting files with a same day requested execution date is 11:30hrs.
+·        Files submitted of same day value after 2pm will fail in the system and a Eur 20 charge will be incurred due to backdated reason.
+·        MsgID and PmtInfId tags inside the file should be unique each time a new file is submitted. Duplication of the respective tags would cause failure of file.
+
+In the meantime should there be any further queries or clarifications please do not hesitate to contact our offices.
+
+Thank you
