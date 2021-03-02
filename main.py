@@ -20,7 +20,7 @@ print('Processing :', args.zippath, "\\", args.zipname)
 
 # The following details will be extracted from the user's database record
 # the name of the file to look for in the zip archive
-xlname = 'BOV SEPA.xlsx'
+xlname = 'BOV SEPA.xlsm'
 # this is the archive the zip file will be protected with. Eventually it will be read from a database.
 zippass = secrets.tmp_zippass()
 

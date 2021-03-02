@@ -9,9 +9,9 @@ def procXL(zip_path, xlsx_file, tempdir):
     workbook = openpyxl.load_workbook(filename=xlsx_file, data_only=True)
     # check that the required sheets are in the Excel File
     setXLFiles = set(workbook.sheetnames)
-    if not {'Control', 'Credit Instruction Record', 'Payment Information Record', 'Header Record',
-            'Control Data'}.issubset(setXLFiles):
-        raise Exception('The XL File is not structure properly')
+    if not {'Header Record', 'Payment Information Record', 'Credit Instruction Record', 'Control',
+            'Control Data (Hidden)'}.issubset(setXLFiles):
+        raise Exception('The XL File is not structured properly')
 
     # Build the XML document
     nsmap = {
@@ -21,7 +21,7 @@ def procXL(zip_path, xlsx_file, tempdir):
     root = etree.Element('Document', nsmap=nsmap)
 
     # Fill in the Computed MsgId and PmtInfld to (necessary if the user leaves these blank)
-    sh = workbook['Control Data']
+    sh = workbook['Control Data (Hidden)']
     computedMsgId = sh['B18'].value
     computedPmtInfld = sh['B20'].value
 
@@ -46,7 +46,7 @@ def procXL(zip_path, xlsx_file, tempdir):
     bovPass = sh['A2'].value
     if bovPass is None or bovPass.strip() == '':
         raise Exception('Invalid SCTE archive password')
-    xmlFile = sh['F2'].value
+    xmlFile = sh['B2'].value
     if xmlFile is None or xmlFile.strip() == '':
         raise Exception('Invalid SCT file name')
 
@@ -231,7 +231,13 @@ def bldHeader(CstmrCdtTrfInitn, computedMsgId, workbook):
     if sMsgId == '':
         sMsgId = computedMsgId.strip()
 
-    sCreDtTm = datetime.datetime.strptime(str(sh['B5'].value), "%Y-%m-%d %H:%M:%S.%f").replace(microsecond=0).isoformat()
+    sCreDtTm = str(sh['B5'].value)
+    # cater for different formats with microseconds and without
+    try:
+        sCreDtTm = datetime.datetime.strptime(sCreDtTm, "%Y-%m-%d %H:%M:%S.%f").replace(microsecond=0).isoformat()
+    except:
+        sCreDtTm = datetime.datetime.strptime(sCreDtTm, "%Y-%m-%d %H:%M:%S").isoformat()
+
     sNbOfTxs = str(int(sh['C5'].value))
     sCtrlSum = '{0:.2f}'.format(sh['D5'].value)
     sNm = sh['E5'].value.strip()
