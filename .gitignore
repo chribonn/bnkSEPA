@@ -114,6 +114,8 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.idea
+idea/
 
 # Spyder project settings
 .spyderproject
@@ -140,5 +142,4 @@ dmypy.json
 cython_debug/
 
 # Program specific modules
-secrets.py
-GALMAM002/
+_excludeGitHub/

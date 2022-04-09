@@ -1,16 +1,23 @@
-# Payments Business Electronic Banking Services
-# SEPA Credit Transfers file layout
-# Pain.001.001.03
-# Alan Bonnici - chribonn@gmail.com
-# Last update: 202204
-# version - 1.30.00
+# The code is pased on document SEPA Credit Transfers file layout
+#  Pain.001.001.03
+#  Version 7.0
+#  January 2020
 
+import sys
 import argparse
 import procZip
 import procXlsx
 import tempfile
-sys.path.insert(1, '/_excludeGitHub')
+
+# this is the archive the zip file will be protected with. Eventually it will be read from a database.
+# This script is not part of the GitHub archive. You can create it with the module below
+#
+# def tmp_zippass():
+#     return 'XXXX0000'
+#
+sys.path.insert(0,"G:\\My Drive\\_Software\\PycharmProjects\\bovSEPA\\_excludeGitHub")
 import secrets
+
 
 # Get the argument of the number to process
 parser = argparse.ArgumentParser(description='BOV SEPA file processor',
@@ -24,7 +31,7 @@ print('Processing :', args.zippath, "\\", args.zipname)
 # The following details will be extracted from the user's database record
 # the name of the file to look for in the zip archive
 xlname = 'BOV SEPA.xlsm'
-# this is the archive the zip file will be protected with. Eventually it will be read from a database.
+
 zippass = secrets.tmp_zippass()
 
 # Extract the Zip
