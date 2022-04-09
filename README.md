@@ -5,4 +5,7 @@ This is an engine written in Python that takes an XL spreadsheet and converts in
 
 An optional feature to reference a user defined control database has been implemented.
 
-It is based on the PDF file in the XL directroy.
+Specifications based upon BOV provide document.
+
+
+

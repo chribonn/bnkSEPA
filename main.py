@@ -1,7 +1,9 @@
-# The code is pased on document SEPA Credit Transfers file layout
-#  Pain.001.001.03
-#  Version 7.0
-#  January 2020
+# Payments Business Electronic Banking Services
+# SEPA Credit Transfers file layout
+# Pain.001.001.03
+# Alan Bonnici - chribonn@gmail.com
+# Last update: 202204
+# version - 1.30.00
 
 import argparse
 import procZip
@@ -33,3 +35,5 @@ with tempfile.TemporaryDirectory() as tmpdirname:
 
 # clear out all variables before termination
 del xlname, zippass
+
+

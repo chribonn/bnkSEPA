@@ -127,8 +127,9 @@ def bldCIRrow(sh, PmtInf, workbook, row):
         PstlAdr = etree.SubElement(Cdtr, "PstlAdr")
         AdrLine1 = etree.SubElement(PstlAdr, "AdrLine")
         AdrLine1.text = sAdrLine1
-        AdrLine2 = etree.SubElement(PstlAdr, "AdrLine")
-        AdrLine2.text = sAdrLine2
+        if sAdrLine2 != "":
+            AdrLine2 = etree.SubElement(PstlAdr, "AdrLine")
+            AdrLine2.text = sAdrLine2
     CdtrAcct = etree.SubElement(CdtTrfTxInf, "CdtrAcct")
     Id = etree.SubElement(CdtrAcct, "Id")
     IBAN = etree.SubElement(Id, "IBAN")
