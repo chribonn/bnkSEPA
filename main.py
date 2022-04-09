@@ -8,8 +8,9 @@
 import argparse
 import procZip
 import procXlsx
-import secrets
 import tempfile
+sys.path.insert(1, '/_excludeGitHub')
+import secrets
 
 # Get the argument of the number to process
 parser = argparse.ArgumentParser(description='BOV SEPA file processor',
@@ -35,5 +36,3 @@ with tempfile.TemporaryDirectory() as tmpdirname:
 
 # clear out all variables before termination
 del xlname, zippass
-
-

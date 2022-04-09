@@ -4,18 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f98a00ac-7a1e-4935-88e5-80f2c55094ac" name="Default Changelist" comment="Modified code to use xlsm files rather than xlsx">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bovSEPA/BOV SEPA.xlsm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img_1.png" afterDir="false" />
+    <list default="true" id="f98a00ac-7a1e-4935-88e5-80f2c55094ac" name="Default Changelist" comment="Version 1.30.00 - See VERSIONING.md">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/main.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GALMAM002/BOV SEPA.xlsm" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Versioning.md" beforeDir="false" afterPath="$PROJECT_DIR$/Versioning.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bovSEPA/BOV SEPA.xlsm" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procXlsx.py" beforeDir="false" afterPath="$PROJECT_DIR$/procXlsx.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/secrets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xl/BOV SEPA.xlsm" beforeDir="false" afterPath="$PROJECT_DIR$/xl/BOV SEPA.xlsm" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,14 +55,15 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/.virtualenvs/BoVSepa" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="Settings.Markdown" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="advanced.settings" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -157,7 +155,21 @@
       <option name="project" value="LOCAL" />
       <updated>1614674278720</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Version 1.30.00 - See VERSIONING.md">
+      <created>1649498052419</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1649498052419</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Version 1.30.00 - See VERSIONING.md">
+      <created>1649498222693</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1649498222693</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,7 +191,8 @@
     <MESSAGE value="Zipped file according to password" />
     <MESSAGE value="Introduced .gitignore" />
     <MESSAGE value="Modified code to use xlsm files rather than xlsx" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified code to use xlsm files rather than xlsx" />
+    <MESSAGE value="Version 1.30.00 - See VERSIONING.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 1.30.00 - See VERSIONING.md" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -188,6 +201,16 @@
           <url>file://$PROJECT_DIR$/procXlsx.py</url>
           <line>234</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>22</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>15</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
