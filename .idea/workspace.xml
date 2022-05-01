@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f98a00ac-7a1e-4935-88e5-80f2c55094ac" name="Default Changelist" comment="Version 1.30.00 - See VERSIONING.md">
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/bovSEPA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bovSEPA.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versioning.md" beforeDir="false" afterPath="$PROJECT_DIR$/VERSIONING.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="ACB &lt;chribonn@gmail.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="JupyterTrust" id="e3fca176-bbd3-4486-8a02-259ae5106b8a" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="1k9OqzMJPEMpplp7dbG1Yq3Pv1o" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="compactDirectories" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\chribonn\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f98a00ac-7a1e-4935-88e5-80f2c55094ac" name="Default Changelist" comment="" />
+      <created>1605109535870</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605109535870</updated>
+      <workItem from="1605109568237" duration="1491000" />
+      <workItem from="1605111356314" duration="2832000" />
+      <workItem from="1605114247848" duration="48000" />
+      <workItem from="1605114311422" duration="348000" />
+      <workItem from="1605114693965" duration="220000" />
+      <workItem from="1606144467882" duration="35000" />
+      <workItem from="1606469296741" duration="30000" />
+      <workItem from="1606469372696" duration="89000" />
+      <workItem from="1606487028016" duration="17000" />
+      <workItem from="1606818462569" duration="429000" />
+      <workItem from="1606818928361" duration="97000" />
+      <workItem from="1606909180442" duration="295000" />
+      <workItem from="1608017238537" duration="160000" />
+      <workItem from="1608017951600" duration="14000" />
+      <workItem from="1608029057172" duration="14000" />
+      <workItem from="1608712936219" duration="684000" />
+      <workItem from="1609750987151" duration="33000" />
+      <workItem from="1609751059567" duration="2023000" />
+      <workItem from="1609771254715" duration="235000" />
+      <workItem from="1610123215318" duration="2133000" />
+      <workItem from="1610954063752" duration="286000" />
+      <workItem from="1610959680942" duration="2222000" />
+      <workItem from="1610971052677" duration="2339000" />
+      <workItem from="1610974146798" duration="111000" />
+      <workItem from="1611048234539" duration="416000" />
+      <workItem from="1611048781968" duration="84000" />
+      <workItem from="1611069542529" duration="17000" />
+      <workItem from="1611668773849" duration="1077000" />
+      <workItem from="1611672874811" duration="3299000" />
+      <workItem from="1611734558132" duration="939000" />
+      <workItem from="1611736594158" duration="2172000" />
+      <workItem from="1611754465001" duration="25000" />
+      <workItem from="1612526638022" duration="13000" />
+      <workItem from="1612860525559" duration="347000" />
+      <workItem from="1612862819638" duration="324000" />
+      <workItem from="1614329648684" duration="191000" />
+      <workItem from="1614669823118" duration="3491000" />
+      <workItem from="1617608084801" duration="430000" />
+      <workItem from="1617609047991" duration="320000" />
+      <workItem from="1620034566408" duration="31000" />
+      <workItem from="1620034762360" duration="614000" />
+      <workItem from="1622465178913" duration="32000" />
+      <workItem from="1623078903610" duration="21000" />
+      <workItem from="1649518014159" duration="458000" />
+      <workItem from="1651391231039" duration="152000" />
+    </task>
+    <task id="LOCAL-00001" summary="Zipped file according to password">
+      <created>1605113826684</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1605113826684</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Zipped file according to password">
+      <created>1606818654170</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606818654170</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Introduced .gitignore">
+      <created>1606909459918</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1606909459918</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Introduced .gitignore">
+      <created>1610973689031</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1610973689031</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Modified code to use xlsm files rather than xlsx">
+      <created>1614674278720</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1614674278720</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Version 1.30.00 - See VERSIONING.md">
+      <created>1649498052419</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1649498052419</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Version 1.30.00 - See VERSIONING.md">
+      <created>1649498222693</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1649498222693</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Version 1.30.00 - See VERSIONING.md">
+      <created>1649500068256</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1649500068256</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Zipped file according to password" />
+    <MESSAGE value="Introduced .gitignore" />
+    <MESSAGE value="Modified code to use xlsm files rather than xlsx" />
+    <MESSAGE value="Version 1.30.00 - See VERSIONING.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 1.30.00 - See VERSIONING.md" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/procXlsx.py</url>
+          <line>234</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>22</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>15</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

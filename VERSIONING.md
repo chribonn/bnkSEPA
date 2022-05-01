@@ -18,7 +18,6 @@
     * Do not write output if when either cell is empty.  Original behaviour was that if Address Line 1 was not blank both lines are written.
 
   * Implemented Sub **ClearSheet()** in WorkSheet *Credit Instruction Record* that goes through all the rows and blanks them.
-    * Code is not linked to a button event. 
-  * Tested and updated to work with Python 3.10
+    *  Code is not linked to a button event. 
 
  

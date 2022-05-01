@@ -26,6 +26,7 @@ share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+.idea
 MANIFEST
 
 # PyInstaller
@@ -107,12 +108,8 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
 .venv
-env/
 venv/
-ENV/
-env.bak/
 venv.bak/
 
 # Spyder project settings
@@ -140,4 +137,7 @@ dmypy.json
 cython_debug/
 
 # Program specific modules
-_excludeGitHub/
+secrets.py
+GALMAM002/
+/.idea/
+/_excludeGitHub/
