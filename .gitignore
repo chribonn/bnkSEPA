@@ -109,8 +109,6 @@ celerybeat.pid
 
 # Environments
 .venv
-venv/
-venv.bak/
 
 # Spyder project settings
 .spyderproject
@@ -137,10 +135,7 @@ dmypy.json
 cython_debug/
 
 # Program specific modules
-secrets.py
-GALMAM002/
 /.idea/
-/_excludeGitHub/
 /.idea/
 /.idea/inspectionProfiles/
 /.idea/runConfigurations/

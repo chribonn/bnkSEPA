@@ -9,7 +9,6 @@ import argparse
 import procZip
 import procXlsx
 import tempfile
-sys.path.insert(1, '/_excludeGitHub')
 import secrets
 
 # Get the argument of the number to process
