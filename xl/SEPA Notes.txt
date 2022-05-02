@@ -1,7 +1,3 @@
-Dear Chris,
-
-Please note that Direct Credit file XXX001 has been tested successfully.
-
 We kindly ask you to take note of the following points prior of submitting files through Internet Banking:-
 
 ·        Avoid submitting files reading value date of Saturday's, Sunday's or Public Holidays.
@@ -11,6 +7,3 @@ We kindly ask you to take note of the following points prior of submitting files
 ·        Files submitted of same day value after 2pm will fail in the system and a Eur 20 charge will be incurred due to backdated reason.
 ·        MsgID and PmtInfId tags inside the file should be unique each time a new file is submitted. Duplication of the respective tags would cause failure of file.
 
-In the meantime should there be any further queries or clarifications please do not hesitate to contact our offices.
-
-Thank you

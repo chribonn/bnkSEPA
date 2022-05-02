@@ -3,9 +3,10 @@ import datetime
 import os
 import pyminizip
 import lxml.etree as etree
+import secrets
 
 
-def procXL(zip_path, xlsx_file, tempdir):
+def procXL(zip_path, xlsx_file, tempdir, bankPass):
     workbook = openpyxl.load_workbook(filename=xlsx_file, data_only=True)
     # check that the required sheets are in the Excel File
     setXLFiles = set(workbook.sheetnames)
@@ -43,9 +44,6 @@ def procXL(zip_path, xlsx_file, tempdir):
 
     # Get the name of the XML file that will store the transactions
     sh = workbook['Control']
-    bovPass = sh['A2'].value
-    if bovPass is None or bovPass.strip() == '':
-        raise Exception('Invalid SCTE archive password')
     xmlFile = sh['B2'].value
     if xmlFile is None or xmlFile.strip() == '':
         raise Exception('Invalid SCT file name')
@@ -61,7 +59,7 @@ def procXL(zip_path, xlsx_file, tempdir):
     # package everything in the zip file
     # in web interface replace C:\Temp with tempdir as the file will be emailed
     zipSCTE = os.path.join(zip_path, xmlFile.strip() + ".SCTE")
-    pyminizip.compress(fileSCT, None, zipSCTE, bovPass, 0)
+    pyminizip.compress(fileSCT, None, zipSCTE, bankPass, 0)
 
 
 def bldCIR(PmtInf, workbook):
