@@ -139,4 +139,4 @@ cython_debug/
 /.idea/
 /.idea/inspectionProfiles/
 /.idea/runConfigurations/
-.project source
+/.project source/*
