@@ -141,3 +141,5 @@ cython_debug/
 /.idea/runConfigurations/
 /.project source/*
 /.project source/
+/.tests/
+/.tests/*

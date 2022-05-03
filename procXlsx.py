@@ -3,8 +3,6 @@ import datetime
 import os
 import pyminizip
 import lxml.etree as etree
-import secrets
-
 
 def procXL(zip_path, xlsx_file, tempdir, bankPass):
     workbook = openpyxl.load_workbook(filename=xlsx_file, data_only=True)

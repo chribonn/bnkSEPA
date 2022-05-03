@@ -22,5 +22,7 @@
 
 1.35.00	
   * The passwords that are used to open the zipped file and to encrypt the SCTE file can now be passed as parameters. If they are absent the code will default to entries in **secrets.py**.
-  * The SCTE password that was embedded in the XL file has been removed.
+  * The name of the xlsm file that is within the zipped archive is a parameter rather than being hard coded into the code.  The default name is **BnkSEPA.xlsm**. This adds another layer of security in an embedded solution.
+  * The VBA code to update the PivotTable in the Control worksheet has been updated. This is because the PivotTable was not always updating. The behaviour is described in https://techcommunity.microsoft.com/t5/excel/pivot-table-won-t-refresh-after-data-refresh/m-p/2937032 
+
  
