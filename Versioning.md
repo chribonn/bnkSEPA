@@ -21,6 +21,6 @@
     *  Code is not linked to a button event. 
 
 1.35.00	
-  * The passwords that are used to open the zipped file and to encrypt the SCTE file can now be passed as parameters. If they are absent the code will look up **secrets.py**.
+  * The passwords that are used to open the zipped file and to encrypt the SCTE file can now be passed as parameters. If they are absent the code will default to entries in **secrets.py**.
   * The SCTE password that was embedded in the XL file has been removed.
  
