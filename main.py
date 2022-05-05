@@ -34,14 +34,17 @@ def extractXL(zip_path, zip_file, zip_pass, xl_file, tmpdirname):
 # Get the argument of the number to process
 parser = argparse.ArgumentParser(description='bank SEPA file processor',
                                  epilog='If upload file doesn\'t have a valid email and password it will be deleted.')
-parser.add_argument('--zipname', type=str, help='Enter the ZIP file you wish to process', required=True)
+parser.add_argument('--zipname', type=str, help='Enter the ZIP file you wish to process', default=secrets.zip_file())
 parser.add_argument("--zippath", type=str, help='Directory where the file is located', default=tempfile.gettempdir())
 parser.add_argument("--zippass", type=str, help='The password of the zip file', default=secrets.tmp_zippass())
 parser.add_argument("--bankSCTE", type=str, help='The password to archive the bank SCTE file', default=secrets.bnk_scte())
-parser.add_argument("--xlfile", type=str, help='The name of the xlsm file in the archive', default='BnkSEPA.xlsm')
+parser.add_argument("--xlfile", type=str, help='The name of the xlsm file in the archive', default=secrets.xl_file())
 args = parser.parse_args()
 
-print('Processing :', args.zippath, "\\", args.zipname)
+if args.zipname is None or len(args.zipname) < 1:
+    raise Exception('Zip filename is mandatory')
+
+print('Processing : ', args.zippath, "\\", args.zipname, sep='')
 
 # Extract the Zip
 with tempfile.TemporaryDirectory() as tmpdirname:
