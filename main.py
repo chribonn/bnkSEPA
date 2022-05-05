@@ -47,5 +47,6 @@ print('Processing :', args.zippath, "\\", args.zipname)
 with tempfile.TemporaryDirectory() as tmpdirname:
     xlsx_filepath = extractXL(args.zippath, args.zipname, args.zippass, args.xlfile, tmpdirname)
     procXlsx.procXL(args.zippath, xlsx_filepath, tmpdirname, args.bankSCTE)
+
     # clean up
-    del xlsx_filepath
+    del xlsx_filepath, tmpdirname
