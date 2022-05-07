@@ -136,7 +136,7 @@ cython_debug/
 
 # Program specific modules
 /.idea/
-/.idea/
+/.idea/*
 /.idea/inspectionProfiles/
 /.idea/runConfigurations/
 /.project source/*

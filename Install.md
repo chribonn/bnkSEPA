@@ -87,3 +87,10 @@ Click the **Extact** button.
 ----------------
 
 
+![Open Command Prompt](./images/InstallModules--001.PNG "Open command prompt").
+
+1. Click on the bovSEPA folder to open it.
+2. Type **cmd** in the address bar.
+3. This will cause a command window to open. The prompt should end with the bovSEPA folder name.
+
+
