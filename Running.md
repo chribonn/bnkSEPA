@@ -25,11 +25,9 @@ Every time you need to make a batch payment:
 5. Use 7-Zip to archive the XLSM file to the password protected zip format.
   - Right click on the XLSM file and from the shortcut menu choose the option **Add to archive...** from the *7-Zip* option.
 
-![Download MS Build Tools](./images/Run--001.PNG "Download MS Build Tools").
+![Open 7-ZIP](./images/Run--001.PNG "Open 7-Zip on this XL workbook").
 
   - Fill in the details to match the **secrets.py** file.
 
-![Download MS Build Tools](./images/Run--002.PNG "Download MS Build Tools").
-
-
+![Enter the detail to match secrets.py](./images/Run-002.PNG "Enter the details to match secrets.py").
 
