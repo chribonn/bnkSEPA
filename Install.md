@@ -1,17 +1,17 @@
-Installing bovSEPA on your computer
+Installing bnkSEPA on your computer
 ===================================
 
 `This document is shows you how to install bovSEPA for the Windows x64 platform. It should work with other OSs`  
 
-To install bovSEPA you need to:
+To install bnkSEPA you need to:
 
   1. [Install Python v3.x](#Python)
   2. [Install Microsoft C++ Build Tools](#MSBldTools)
-  3. [Download bovSEPA](#DLbovSEPA)
+  3. [Download bnkSEPA](#DLbnkSEPA)
   4. [Download 7Zip](#7Zip)
   5. [Download support modules](#DLModules)
   6. [Configure your settings](#UserConfig)
-  7. Help the **bovSEPA** project with a couple of clicks.
+  7. Help the **bnkSEPA** project with a couple of clicks.
 
 
 <a name="Python"></a>Install Python v3.x
@@ -56,35 +56,35 @@ While there are a number of programs that generate zip file, 7Zip is the one tha
 
 
 
-<a name="DLbovSEPA"></a>Download bovSEPA
+<a name="DLbnkSEPA"></a>Download bnkSEPA
 ----------------
 
-![Login to bovSEPA GitHub page](./images/InstallbovSEPA--001.PNG "Login to bovSEPA GitHub page").
+![Login to bnkSEPA GitHub page](./images/InstallbnkSEPA--001.PNG "Login to bovSEPA GitHub page").
 
-Go to the [bovSEPA GitHub repository](https://www.github.com/chribonn/bovSEPA).
+Go to the [bnkSEPA GitHub repository](https://www.github.com/chribonn/bovSEPA).
 
 Click the Watch option on the page. You will be asked to register with GitHub.  *Registration is Free*.
 
->> The Watch option will inform you whenever bovSEPA is enhanced and improved with new features.
+>> The Watch option will inform you whenever bnkSEPA is enhanced and improved with new features.
 
 >> Registering also allows you to contribute the the project and request new options.
 
 Click the **Starred** option to help spread the word about this project.
 
 
-![Download bovSEPA code archive](./images/InstallbovSEPA--002.PNG "Download bovSEPA code archive").
+![Download bnkSEPA code archive](./images/InstallbnkSEPA--002.PNG "Download bnkSEPA code archive").
 
 Click the **Code** button and select the option **Download ZIP**. This will save the program to your computer.
 
 *This tutorial will install the solution on the computer desktop.*
 
 
-![Extract bovSEPA code archive](./images/InstallbovSEPA--003.PNG "Extract bovSEPA code archive").
+![Extract bnkSEPA code archive](./images/InstallbnkSEPA--003.PNG "Extract bnkSEPA code archive").
 
 In *File Explorer* right click on the zip archive and select the option **Extract All...**.
 
 
-![Extract bovSEPA code archive](./images/InstallbovSEPA--004.PNG "Extract bovSEPA code archive").
+![Extract bnkSEPA code archive](./images/InstallbnkSEPA--004.PNG "Extract bnkSEPA code archive").
 
 ### READ CAREFULLY
 

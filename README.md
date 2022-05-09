@@ -1,4 +1,4 @@
-# BOV SEPA file creator
+# bnkSEPA file creator
 
 #### Last update: 202204
 #### Version - 1.35.00
@@ -48,7 +48,8 @@ The following VBA modules are defined:
 ## Documentation and Notes in the XL folder
 
 The folder **XL** consists of the following files:
-  * **BOV SEPA.xlsm** - This is the file that will be used to post the transactions and which will be used to generate the file used as input for the ETL transformation
+  * **BnkSEPA.xlsm** - This is the file that will be used to post the transactions and which will be used to generate the file used as input for the ETL transformation
+  * **Backup of BnkSEPA.xlk** - Backup of BnkSEPA.xlsm (just in case)
   * **SEPA SCT File Layouts.pdf** - This is the document on which the solution was based upon
   * **SEPA Notes.txt** - These are additional information made available by the bank.
   
