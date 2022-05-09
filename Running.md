@@ -61,5 +61,12 @@ Every time you need to make a batch payment:
 
   - Fill in the details to match the **secrets.py** file.
 
-![Enter the detail to match secrets.py](./images/Run--002.PNG "Enter the details to match secrets.py").
+
+### Double click the icon
+
+![Click the bnkSEPA icon](./images/Run--006.PNG "click the icon").
+
+Double click the bnkSEPA icon and wait for the file to process the transactions.
+
+Once this is done, collect the **SCTE** file from the processing directory and forward it to the bank.
 
