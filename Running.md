@@ -1,14 +1,14 @@
 Running bnkSEPA on your computer
 ================================
 
-`This document walks you through the process of running bovSEPA.`
+`This document walks you through the process of running bnkSEPA.`
 
 ## First time setup
 
 ### Setting up the XL Workbook
 
 1. You should copy the BnkSEPA.xlsm file from the project's xl directory to a folder you will work from. For the purposes of this tutorial the folder will be called **bnkSEPA**.
-2. Open the xlsm file and accept security warnings if you want to be able to use automation functions built into the XL workbook (*bovSEPA will still work if macros are disabled*).
+2. Open the xlsm file and accept security warnings if you want to be able to use automation functions built into the XL workbook (*bnkSEPA will still work if macros are disabled*).
 3. The XL workbook is password protected to limit typing only in certain cells thereby limiting entry errors. The password is *Uneaten-6Unstirred*.
 4. You may want to change the default password. To change the password, unprotect the workbook and worksheets using the default one and protect everything again using the one of your choice.
 5. Go to **Payment Information Record** sheet and fill in your SEPA Payee details.
