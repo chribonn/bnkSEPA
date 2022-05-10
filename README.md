@@ -6,7 +6,7 @@
 
 ## Project Overview
 
-This is an engine written in Python that takes a Microsoft Excel spreadsheet and converts into a password protected file that will be processed by Bank of Valletta (BOV).  Other financial institutions that use the same format may also benefit from this **ETL** (*Extract Transform Load*) engine.
+This is an engine written in Python that takes a Microsoft Excel spreadsheet and converts into a password-protected file that will be processed by Financial Institution.  Other financial institutions that use the same format may also benefit from this **ETL** (*Extract Transform Load*) engine.
 
 The Excel workbook consists of the following worksheets:
   * Payment Information Record - This sheet holds information of the payee account. This will be entity that will upload the file to the bank
@@ -26,7 +26,7 @@ The Excel workbook consists of the following worksheets:
 
 When the Excel file is ready to be processed it must be zipped using 7Zip with a password. The resulting password protected zip file will then need to be processed by the python engine so as to produce the SCTE file required by the bank. This file is protected by a password that has been agreed with the financial institution.
 
-![Process Flow](images/readme001.png)
+![Process Flow](images/readme001.png "Process Flow")
 
 The python engine takes the following arguments:
 
