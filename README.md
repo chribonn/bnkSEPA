@@ -2,7 +2,7 @@
 
 #### Last update: 202204
 #### Version - 1.35.00
-#### Project Repository: https://www.github.com/chribonn/bovSEPA
+#### Project Repository: https://www.github.com/chribonn/bnkSEPA
 
 ## Project Overview
 
