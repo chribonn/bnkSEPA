@@ -17,11 +17,11 @@ To install bnkSEPA you need to:
 <a name="Python"></a>Install Python v3.x
 -------------------
 
-![Download Python from www.python.org](./images/InstallPython-001.PNG "Download Python").
+![Download Python from www.python.org](../images/InstallPython-001.PNG "Download Python").
 
 Go to the [Python Website](https://www.python.org) and from the Download tab select the latest version of Python for your platform.
 
-![Install the Python installer](./images/InstallPython-002.PNG "Install Python").
+![Install the Python installer](../images/InstallPython-002.PNG "Install Python").
 
 Click the installer. Before selecting the **Install Now** option, check the *Add Python 3.x to PATH*.  This will avoid you having to type the path to the Python interpreter in order to execute the program.
 
@@ -30,16 +30,16 @@ Click the installer. Before selecting the **Install Now** option, check the *Add
 <a name="MSBldTools"></a>Install Microsoft C++ Build Tools
 ---------------------------------
 
-![Download MS Build Tools](./images/InstallMSC++BuildTools--001.PNG "Download MS Build Tools").
+![Download MS Build Tools](../images/InstallMSC++BuildTools--001.PNG "Download MS Build Tools").
 
 Go to the [Microsoft C++ Build Tools page](https://visualstudio.microsoft.com/visual-cpp-build-tools/) and download the installer.
 
-![Install the Desktop Development with C++ option](./images/InstallMSC++BuildTools--002.PNG "Install Desktop Development with C++").
+![Install the Desktop Development with C++ option](../images/InstallMSC++BuildTools--002.PNG "Install Desktop Development with C++").
 
 Execute the installer and check the option **Desktop Development with C++**.   
 Click install.  
 
-![Exit the installer](./images/InstallMSC++BuildTools--003.PNG "Exit MS Built Tools installer").
+![Exit the installer](../images/InstallMSC++BuildTools--003.PNG "Exit MS Built Tools installer").
 
 Once the selected options have been installed exit.
 
@@ -59,7 +59,7 @@ While there are a number of programs that generate zip file, 7Zip is the one tha
 <a name="DLbnkSEPA"></a>Download bnkSEPA
 ----------------
 
-![Login to bnkSEPA GitHub page](./images/InstallbnkSEPA--001.PNG "Login to bovSEPA GitHub page").
+![Login to bnkSEPA GitHub page](../images/InstallbnkSEPA--001.PNG "Login to bovSEPA GitHub page").
 
 Go to the [bnkSEPA GitHub repository](https://www.github.com/chribonn/bovSEPA).
 
@@ -72,19 +72,19 @@ Click the Watch option on the page. You will be asked to register with GitHub.  
 Click the **Starred** option to help spread the word about this project.
 
 
-![Download bnkSEPA code archive](./images/InstallbnkSEPA--002.PNG "Download bnkSEPA code archive").
+![Download bnkSEPA code archive](../images/InstallbnkSEPA--002.PNG "Download bnkSEPA code archive").
 
 Click the **Code** button and select the option **Download ZIP**. This will save the program to your computer.
 
 *This tutorial will install the solution on the computer desktop.*
 
 
-![Extract bnkSEPA code archive](./images/InstallbnkSEPA--003.PNG "Extract bnkSEPA code archive").
+![Extract bnkSEPA code archive](../images/InstallbnkSEPA--003.PNG "Extract bnkSEPA code archive").
 
 In *File Explorer* right click on the zip archive and select the option **Extract All...**.
 
 
-![Extract bnkSEPA code archive](./images/InstallbnkSEPA--004.PNG "Extract bnkSEPA code archive").
+![Extract bnkSEPA code archive](../images/InstallbnkSEPA--004.PNG "Extract bnkSEPA code archive").
 
 ### READ CAREFULLY
 
@@ -100,14 +100,14 @@ Click the **Extact** button.
 ----------------
 
 
-![Open Command Prompt](./images/InstallModules--001.PNG "Open command prompt").
+![Open Command Prompt](../images/InstallModules--001.PNG "Open command prompt").
 
 1. Click on the bovSEPA folder to open it.
 2. Type **cmd** in the address bar.
 3. This will cause a command window to open. The prompt should end with the bovSEPA folder name.
 
 
-![Install dependent libraries](./images/InstallModules--002.PNG "Install dependent libraries").
+![Install dependent libraries](../images/InstallModules--002.PNG "Install dependent libraries").
 
 1. Type **Installer\install.cmd** and press enter. The environment and the modules this solution uses will be setup and installed.
 2. Type Close the command prompt window.
@@ -121,12 +121,12 @@ Click the **Extact** button.
 ## Configure the *secrets.py* file
 
 
-![Edit secrets.py](./images/Configure-001.PNG "Open secrets.py for editing").
+![Edit secrets.py](../images/Configure-001.PNG "Open secrets.py for editing").
 
 Right click on **secrets.py** file and choose *Edit with IDLE*. (You can also edit the file with a text editor such as *Notepad*).
 
 
-![Edit secrets.py](./images/Configure-002.PNG "What to edit in secrets.py").
+![Edit secrets.py](../images/Configure-002.PNG "What to edit in secrets.py").
 
 There are 4 settings you can edit in **secrets.py**:
 

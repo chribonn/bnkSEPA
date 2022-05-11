@@ -2,7 +2,7 @@
 
 The design of this solution was built so that it could be integrated into a larger solution that  part of a client facing portal with this being one of the options.
 
-![](images/overview001.png)
+![](../images/overview001.png)
 
 1. The user would log into a portal using their credentials (Username, Password, 2FA)
 2. The authenticated user uploads the password-protected zip to the portal. *The contents of the file cannot be read while in transit.*

@@ -1,10 +1,10 @@
 # Payments Business Electronic Banking Services
 # SEPA Credit Transfers file layout
-# Pain.001.001.03
+# Pain.001.001.03 (March 2022)
 # Alan Bonnici - chribonn@gmail.com
 # Last update: 202205
-# version - 1.35.00
-# Project repository: https://www.github.com/chribonn/bovSEPA
+# version - 1.37.00
+# Project repository: https://www.github.com/chribonn/bnkSEPA
 
 import argparse
 import procXlsx
