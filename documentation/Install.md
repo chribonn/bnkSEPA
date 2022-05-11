@@ -11,7 +11,7 @@ To install bnkSEPA you need to:
   4. [Download 7Zip](#7Zip)
   5. [Download support modules](#DLModules)
   6. [Configure your settings](#UserConfig)
-  7. Help the **bnkSEPA** project with a couple of clicks.
+  7. [Help the **bnkSEPA** project with a couple of clicks.](/documentation/HelpbnkSEPA.md)
 
 
 <a name="Python"></a>Install Python v3.x

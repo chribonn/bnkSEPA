@@ -28,3 +28,9 @@
 1.37.00	
   * Applied changes defined in the SEPA Credit Transfers file layout document dated 2022-03
   * Added the button call the macro that blanked the CIR Worksheet
+
+
+## Help the project
+
+[Click here](/documentation/HelpbnkSEPA.md) to read how you can help the project.
+

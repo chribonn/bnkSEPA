@@ -1,7 +1,7 @@
 # bnkSEPA file creator
 
 #### Last update: 202204
-#### Version - 1.35.00
+#### Version - 1.37.00
 #### Project Repository: https://www.github.com/chribonn/bnkSEPA
 
 ## Project Overview
@@ -35,6 +35,14 @@ The python engine takes the following arguments:
   * --zippass - the password of the zip file [Default: *string returned by function tmp_zippass() in secrets.py*]
   * --bankSCTE - the password to archive the SCT file for the bank [Default: *string returned by function bnk_scte() in secrets.py*]
 
+## Microsoft Excel Worksheet
+
+The Microsoft Excel Worksheet that is translated by the Python engine is located in the **xl** folder.  It contains the following files:
+
+  * **BnkSEPA.xlsm** - This is the file that will be used to post the transactions and which will be used to generate the file used as input for the ETL transformation
+  * **Backup of BnkSEPA.xlk** - Backup of BnkSEPA.xlsm (normally the version before the current one. This is created automatically whenever the workbook is saved).
+
+
 ## Macros
 
 This Microsoft Excel workbook makes use of macros to perform some of the functions is does.  When opening the downloaded file for the first time macros must be enabled in order to benefit fully from the solution. Keeping macros disabled will still generate the output for the bank; it will impact of the functionality available within Excel.
@@ -47,11 +55,12 @@ The following VBA modules are defined:
 
 ## Documentation and Notes in the XL folder
 
-The folder **XL** consists of the following files:
-  * **BnkSEPA.xlsm** - This is the file that will be used to post the transactions and which will be used to generate the file used as input for the ETL transformation
-  * **Backup of BnkSEPA.xlk** - Backup of BnkSEPA.xlsm (just in case)
-  * **SEPA SCT File Layouts.pdf** - This is the document on which the solution was based upon
-  * **SEPA Notes.txt** - These are additional information made available by the bank.
+The folder **documentation** contains guides and instructions on how to install, run the engine. It also contains documents that describe the engineering aspects of the solution. 
+  * **[SEPA SCT File Layouts](/documentation/SEPA%20SCT%20File%20Layouts%20-%20202203.pdf)** - This is the document on which the solution was based upon.
+  * **[SEPA Notes.txt](/documentation/SEPA%20Notes.txt)** - These are additional information made available by the bank.
+  * **[Install.md](/documentation/Install.md)** - How to install the solution on your computer.
+  * **[Running.md](/documentation/Running.md)** - How to run the engine whenever you need to batch SEPA payments.
+  * **[Versioning.md](/documentation/Versioning.md)** - The development history of this tool.
   
 ## Checking and Validation
 
@@ -72,4 +81,7 @@ The solution makes use of the following passwords:
   * SCTE Password
     - The file that is transmitted to the bank needs to be password protected. This password can be passed as parameter to the python script. It defaults to the string returned by the function **bnk_scte()** in the module **secrets.py**. 
 
+## Help the project
+
+[Click here](/documentation/HelpbnkSEPA.md) to read how you can help the project.
 

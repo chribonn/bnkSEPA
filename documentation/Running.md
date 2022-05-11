@@ -70,3 +70,8 @@ Double click the bnkSEPA icon and wait for the file to process the transactions.
 
 Once this is done, collect the **SCTE** file from the processing directory and forward it to the bank.
 
+
+## Help the project
+
+[Click here](/documentation/HelpbnkSEPA.md) to read how you can help the project.
+
