@@ -1,7 +1,7 @@
 # bnkSEPA : Excel to SEPA Credit Transfers (SCTE) Electronic Payment
 
 #### Last update: 202205
-#### Version - 1.37.00
+#### Version - 1.37.01
 #### Project Repository: https://www.github.com/chribonn/bnkSEPA
 
 ## Project Overview
