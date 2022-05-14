@@ -1,5 +1,5 @@
-Installing bnkSEPA on your computer
-===================================
+Install bnkSEPA on your computer
+================================
 
 `This document is shows you how to install bovSEPA for the Windows x64 platform. It should work with other OSs`  
 
@@ -112,6 +112,10 @@ Click the **Extact** button.
 1. Type **Installer\install.cmd** and press enter. The environment and the modules this solution uses will be setup and installed.
 2. Type Close the command prompt window.
 
+
+![Perform recommended upgrades](../images/InstallModules--003.PNG "Install dependent libraries")
+
+If prompted to update any components, copy the command into the command window.
 
 
 <a name="UserConfig"></a>Configure your settings
