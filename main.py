@@ -2,8 +2,8 @@
 # SEPA Credit Transfers file layout
 # Pain.001.001.03 (March 2022)
 # Alan Bonnici - chribonn@gmail.com
-# Last update: 202205
-# version - 1.37.00
+# Last update: 202212
+# version - 1.37.01
 # Project repository: https://www.github.com/chribonn/bnkSEPA
 
 import argparse
