@@ -64,7 +64,7 @@ def bldCIR(PmtInf, workbook):
     sh = workbook['Credit Instruction Record']
 
     row = 5
-    while row < 100:
+    while row < 106:
         sInstrId = sh['A' + str(row)].value
         if sInstrId is None:
             break
