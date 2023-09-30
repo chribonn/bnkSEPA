@@ -4,13 +4,18 @@ import os
 import pyminizip
 import lxml.etree as etree
 
-def procXL(zip_path, xlsx_file, tempdir, bankPass):
+
+def procXL(zip_path, xlsx_file, tempdir, bnkPass):
     workbook = openpyxl.load_workbook(filename=xlsx_file, data_only=True)
     # check that the required sheets are in the Excel File
     setXLFiles = set(workbook.sheetnames)
     if not {'Header Record', 'Payment Information Record', 'Credit Instruction Record', 'Control',
             'Control Data (Hidden)'}.issubset(setXLFiles):
-        raise Exception('The XL File is not structured properly')
+
+        critical_err = 'The XL File is not structured properly'
+        print (critical_err)
+        input('Press Enter to terminate.')
+        raise Exception(critical_err)
 
     # Build the XML document
     nsmap = {
@@ -44,7 +49,10 @@ def procXL(zip_path, xlsx_file, tempdir, bankPass):
     sh = workbook['Control']
     xmlFile = sh['B2'].value
     if xmlFile is None or xmlFile.strip() == '':
-        raise Exception('Invalid SCT file name')
+        critical_err = 'Invalid SCT file name'
+        print (critical_err)
+        input('Press Enter to terminate.')
+        raise Exception(critical_err)
 
     srcFile = xmlFile.strip() + ".SCT"
     fileSCT = os.path.join(tempdir, srcFile)
@@ -52,24 +60,40 @@ def procXL(zip_path, xlsx_file, tempdir, bankPass):
         with open(fileSCT, 'wb') as file:
             file.write(datastr)
     except:
-        raise Exception('Unable to create SCT file')
+        critical_err = 'Unable to create SCT file'
+        print('\n\n' + critical_err+ '\n\n')
+        input('Press Enter to terminate.')
+        raise Exception(critical_err)
 
     # package everything in the zip file
     # in web interface replace C:\Temp with tempdir as the file will be emailed
     zipSCTE = os.path.join(zip_path, xmlFile.strip() + ".SCTE")
-    pyminizip.compress(fileSCT, None, zipSCTE, bankPass, 0)
+    pyminizip.compress(fileSCT, None, zipSCTE, bnkPass, 0)
 
 
 def bldCIR(PmtInf, workbook):
     sh = workbook['Credit Instruction Record']
 
     row = 5
-    while row < 106:
+    lstEndToEndId = []
+    # list stores the sEndToEndId values. If there are duplicate entries raises an exception  - ACB 202309
+    while row < 200:
         sInstrId = sh['A' + str(row)].value
         if sInstrId is None:
             break
 
-        PmtInf = bldCIRrow(sh, PmtInf, workbook, row)
+        result = bldCIRrow(sh, PmtInf, workbook, row)
+        PmtInf = result[0]
+        sEndToEndId = result[1]
+
+        if sEndToEndId in lstEndToEndId:
+            critical_err = 'EndToEndId {0} has been already used in this batch'.format(sEndToEndId)
+            print('\n\n' + critical_err+ '\n\n')
+            input('Press Enter to terminate.')
+            raise Exception(critical_err)
+        else:
+            lstEndToEndId.append(sEndToEndId)
+            
         row += 2
 
     return PmtInf
@@ -123,9 +147,8 @@ def bldCIRrow(sh, PmtInf, workbook, row):
         PstlAdr = etree.SubElement(Cdtr, "PstlAdr")
         AdrLine1 = etree.SubElement(PstlAdr, "AdrLine")
         AdrLine1.text = sAdrLine1
-        if sAdrLine2 != "":
-            AdrLine2 = etree.SubElement(PstlAdr, "AdrLine")
-            AdrLine2.text = sAdrLine2
+        AdrLine2 = etree.SubElement(PstlAdr, "AdrLine")
+        AdrLine2.text = sAdrLine2
     CdtrAcct = etree.SubElement(CdtTrfTxInf, "CdtrAcct")
     Id = etree.SubElement(CdtrAcct, "Id")
     IBAN = etree.SubElement(Id, "IBAN")
@@ -137,7 +160,7 @@ def bldCIRrow(sh, PmtInf, workbook, row):
     Ustrd = etree.SubElement(RmtInf, "Ustrd")
     Ustrd.text = sUstrd
 
-    return PmtInf
+    return PmtInf, sEndToEndId
 
 
 def bldPIR(PmtInf, computedPmtInfld, workbook):
@@ -200,8 +223,10 @@ def bldPIR(PmtInf, computedPmtInfld, workbook):
         PstlAdr = etree.SubElement(Dbtr, "PstlAdr")
         AdrLine1 = etree.SubElement(PstlAdr, "AdrLine")
         AdrLine1.text = sAdrLine1
-        AdrLine2 = etree.SubElement(PstlAdr, "AdrLine")
-        AdrLine2.text = sAdrLine2
+        # Only fill if Address line 2 is not null
+        if sAdrLine2 != "":
+            AdrLine2 = etree.SubElement(PstlAdr, "AdrLine")
+            AdrLine2.text = sAdrLine2
     DbtrAcct = etree.SubElement(PmtInf, "DbtrAcct")
     Id = etree.SubElement(DbtrAcct, "Id")
     IBAN = etree.SubElement(Id, "IBAN")

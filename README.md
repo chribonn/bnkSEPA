@@ -1,7 +1,7 @@
 # bnkSEPA : Excel to SEPA Credit Transfers (SCTE) Electronic Payment
 
-#### Last update: 202205
-#### Version - 1.37.01
+#### Last update: 202309
+#### Version - 1.38.01
 #### Project Repository: https://www.github.com/chribonn/bnkSEPA
 
 ## Project Overview
@@ -56,7 +56,8 @@ The following VBA modules are defined:
 ## Documentation and Notes in the XL folder
 
 The folder **documentation** contains guides and instructions on how to install, run the engine. It also contains documents that describe the engineering aspects of the solution. 
-  * **[SEPA SCT File Layouts](/documentation/SEPA%20SCT%20File%20Layouts%20-%20202203.pdf)** - This is the document on which the solution was based upon.
+  * **[SEPA SCT File Layouts](/documentation/SEPA%20SCT%20File%20Layouts%20-%20202309.pdf)** - This is the document on which the solution was based upon.
+  * **[SEPA SCT File Layouts](/documentation/SEPA%20SCT%20File%20Layouts%20-%20202309.pdf)** - This is the document on which the solution was based upon.
   * **[SEPA Notes.txt](/documentation/SEPA%20Notes.txt)** - These are additional information made available by the bank.
   * **[Install.md](/documentation/Install.md)** - How to install the solution on your computer.
   * **[Running.md](/documentation/Running.md)** - How to run the engine whenever you need to batch SEPA payments.
