@@ -42,7 +42,7 @@ bnkSEPA still needs a logo (and icon).
 
 If you are using **bnkSEPA** drop us a note. We like to know that this tool is being used. We will not ask for any money (or beer).
 
-If you have ideas use GitHub to send them through for consideration.  We promise to review all suggestions and develop ideas that will benefit the project.
+If you have ideas use GitHub to send them through for consideration.  We review all suggestions and develop ideas that will benefit the project.
 
 
 

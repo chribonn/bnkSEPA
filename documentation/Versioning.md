@@ -29,6 +29,12 @@
   * Applied changes defined in the SEPA Credit Transfers file layout document dated 2022-03
   * Added the button call the macro that blanked the CIR Worksheet
 
+1.38.01	
+  * Applied changes defined in the SEPA Credit Transfers file layout document dated 2023-09
+  * Code review and improvement
+  * Minor bug fixes
+  * Updated requirements.txt
+  * Tested (and env upgrade) to Pyhon 3.11
 
 ## Help the project
 
