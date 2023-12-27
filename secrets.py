@@ -12,7 +12,3 @@ def tmp_zippass():
 # This contains the name of the Excel XLSM file that contain the transactions that need to be processed
 def xl_file():
     return 'BnkSEPA.xlsm'
-
-# This contains the password that will be used to password protect the file for transmission to the bank. This is shared with the bank.
-def bnk_scte():
-    return '12345678'

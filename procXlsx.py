@@ -1,11 +1,10 @@
 import openpyxl
 import datetime
 import os
-import pyminizip
 import lxml.etree as etree
 
 
-def procXL(zip_path, xlsx_file, tempdir, bnkPass):
+def procXL(zip_path, xlsx_file):
     workbook = openpyxl.load_workbook(filename=xlsx_file, data_only=True)
     # check that the required sheets are in the Excel File
     setXLFiles = set(workbook.sheetnames)
@@ -13,7 +12,7 @@ def procXL(zip_path, xlsx_file, tempdir, bnkPass):
             'Control Data (Hidden)'}.issubset(setXLFiles):
 
         critical_err = 'The XL File is not structured properly'
-        print (critical_err)
+        print(critical_err)
         input('Press Enter to terminate.')
         raise Exception(critical_err)
 
@@ -50,25 +49,21 @@ def procXL(zip_path, xlsx_file, tempdir, bnkPass):
     xmlFile = sh['B2'].value
     if xmlFile is None or xmlFile.strip() == '':
         critical_err = 'Invalid SCT file name'
-        print (critical_err)
+        print(critical_err)
         input('Press Enter to terminate.')
         raise Exception(critical_err)
 
     srcFile = xmlFile.strip() + ".SCT"
-    fileSCT = os.path.join(tempdir, srcFile)
+    # fileSCT = os.path.join(tempdir, srcFile) - write file to final directory rather than tempdir
+    fileSCT = os.path.join(zip_path, srcFile)
     try:
         with open(fileSCT, 'wb') as file:
             file.write(datastr)
     except:
         critical_err = 'Unable to create SCT file'
-        print('\n\n' + critical_err+ '\n\n')
+        print('\n\n' + critical_err + '\n\n')
         input('Press Enter to terminate.')
         raise Exception(critical_err)
-
-    # package everything in the zip file
-    # in web interface replace C:\Temp with tempdir as the file will be emailed
-    zipSCTE = os.path.join(zip_path, xmlFile.strip() + ".SCTE")
-    pyminizip.compress(fileSCT, None, zipSCTE, bnkPass, 0)
 
 
 def bldCIR(PmtInf, workbook):

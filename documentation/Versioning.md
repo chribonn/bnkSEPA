@@ -36,6 +36,10 @@
   * Updated requirements.txt
   * Tested (and env upgrade) to Pyhon 3.11
 
+2.00.000	
+  * The generated **SCT** file is not transformed into a password-protected **SCTE** file.  All logic related to this function has been removed.
+  * Minor documentation corrections
+
 ## Help the project
 
 [Click here](/documentation/HelpbnkSEPA.md) to read how you can help the project.

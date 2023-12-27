@@ -1,12 +1,12 @@
-# bnkSEPA : Excel to SEPA Credit Transfers (SCTE) Electronic Payment
+# bnkSEPA : Excel to SEPA Credit Transfers (<span style="color:red">~~SCTE~~</span> SCT) Electronic Payment
 
-#### Last update: 202309
-#### Version - 1.38.01
+#### Last update: 202312
+#### Version - 2.00.00
 #### Project Repository: https://www.github.com/chribonn/bnkSEPA
 
 ## Project Overview
 
-This is an engine written in Python that takes a Microsoft Excel spreadsheet and converts into a password-protected file that will be processed by Financial Institution.  Other financial institutions that use the same format may also benefit from this **ETL** (*Extract Transform Load*) engine.
+This is an engine written in Python that takes a Microsoft Excel spreadsheet and converts into a <span style="color:red">~~password-protected~~</span> file that will be processed by the Financial Institution.  Other financial institutions that use the same format may also benefit from this **ETL** (*Extract Transform Load*) engine.
 
 The Excel workbook consists of the following worksheets:
   * Payment Information Record - This sheet holds information of the payee account. This will be entity that will upload the file to the bank
@@ -24,7 +24,7 @@ The Excel workbook consists of the following worksheets:
 
 ## Solution Flow Diagram
 
-When the Excel file is ready to be processed it must be zipped using 7Zip with a password. The resulting password protected zip file will then need to be processed by the python engine so as to produce the SCTE file required by the bank. This file is protected by a password that has been agreed with the financial institution.
+When the Excel file is ready to be processed it must be zipped using 7Zip with a password. The resulting password protected zip file will then need to be processed by the python engine so as to produce the <span style="color:red">~~SCTE~~</span> SCT file required by the bank. ~~This file is protected by a password that has been agreed with the financial institution.~~ <span style="color:red">This file is then upload to the financial institution via their secure portal.</span>  
 
 ![Process Flow](images/readme001.png "Process Flow")
 
@@ -33,7 +33,7 @@ The python engine takes the following arguments:
   * --zipname - this is the name of the archive that contains the archived Excel.  [*Mandatory*]
   * --zippath - this is the directory where the zip file is located. [Default: *directory used for temporary files*]
   * --zippass - the password of the zip file [Default: *string returned by function tmp_zippass() in secrets.py*]
-  * --bankSCTE - the password to archive the SCT file for the bank [Default: *string returned by function bnk_scte() in secrets.py*]
+  * <span style="color:red">~~--bankSCTE - the password to archive the SCT file for the bank [Default: *string returned by function bnk_scte() in secrets.py*]~~</span>
 
 ## Microsoft Excel Worksheet
 
@@ -79,8 +79,8 @@ The solution makes use of the following passwords:
   * Zip Password
     - This password can be passed as parameter to the python script. It defaults to the string returned by the function **tmp_zippass()** in the module **secrets.py**. 
     - This password is used to archive the Excel Workbook 
-  * SCTE Password
-    - The file that is transmitted to the bank needs to be password protected. This password can be passed as parameter to the python script. It defaults to the string returned by the function **bnk_scte()** in the module **secrets.py**. 
+  * <span style="color:red">~~SCTE Password~~
+    - ~~The file that is transmitted to the bank needs to be password protected. This password can be passed as parameter to the python script. It defaults to the string returned by the function **bnk_scte()** in the module **secrets.py**.~~ </span>
 
 ## Help the project
 

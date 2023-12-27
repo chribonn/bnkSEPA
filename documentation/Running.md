@@ -68,7 +68,7 @@ Every time you need to make a batch payment:
 
 Double click the bnkSEPA icon and wait for the file to process the transactions.
 
-Once this is done, collect the **SCTE** file from the processing directory and forward it to the bank.
+Once this is done, collect the <span style="color:red">~~**SCTE**~~</span> **SCT** file from the processing directory and ~~forward~~ <span style="color:red">upload</span> it to the bank.
 
 
 ## Help the project
