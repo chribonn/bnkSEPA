@@ -50,7 +50,7 @@ Once the selected options have been installed exit.
 <a name="7Zip"></a>Install 7-Zip
 ---------------------------------
 
-Part of the process of generating the SCTE file requires that you zip the XLSM file.
+Part of the process of generating the SCT file requires that you zip the XLSM file.
 
 While there are a number of programs that generate zip file, 7Zip is the one that has been tested with this solution.
 
