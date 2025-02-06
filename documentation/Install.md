@@ -1,7 +1,7 @@
 Install bnkSEPA on your computer
 ================================
 
-`This document is shows you how to install bovSEPA for the Windows x64 platform. It should work with other OSs`  
+`This document is shows you how to install bnkSEPA for the Windows x64 platform. It should work with other OSs`  
 
 To install bnkSEPA you need to:
 
@@ -61,9 +61,9 @@ While there are a number of programs that generate zip file, 7Zip is the one tha
 <a name="DLbnkSEPA"></a>Download bnkSEPA
 ----------------
 
-![Login to bnkSEPA GitHub page](../images/InstallbnkSEPA--001.PNG "Login to bovSEPA GitHub page").
+![Login to bnkSEPA GitHub page](../images/InstallbnkSEPA--001.PNG "Login to bnkSEPA GitHub page").
 
-Go to the [bnkSEPA GitHub repository](https://www.github.com/chribonn/bovSEPA).
+Go to the [bnkSEPA GitHub repository](https://www.github.com/chribonn/bnkSEPA).
 
 Click the Watch option on the page. You will be asked to register with GitHub.  *Registration is Free*.
 
@@ -90,9 +90,9 @@ In *File Explorer* right click on the zip archive and select the option **Extrac
 
 ### READ CAREFULLY
 
-If you accept the directory suggested by the **Extract All...** option the code will be extracted into `Desktop ==> bovSEPA ==> bovSEPA`.
+If you accept the directory suggested by the **Extract All...** option the code will be extracted into `Desktop ==> bnkSEPA ==> bnkSEPA`.
 
-Backspace as shown above to get the installation to be at `Desktop ==> bovSEPA`
+Backspace as shown above to get the installation to be at `Desktop ==> bnkSEPA`
 
 Click the **Extact** button.
 
@@ -104,9 +104,9 @@ Click the **Extact** button.
 
 ![Open Command Prompt](../images/InstallModules--001.PNG "Open command prompt").
 
-1. Click on the bovSEPA folder to open it.
+1. Click on the bnkSEPA folder to open it.
 2. Type **cmd** in the address bar.
-3. This will cause a command window to open. The prompt should end with the bovSEPA folder name.
+3. This will cause a command window to open. The prompt should end with the bnkSEPA folder name.
 
 
 ![Install dependent libraries](../images/InstallModules--002.PNG "Install dependent libraries").
