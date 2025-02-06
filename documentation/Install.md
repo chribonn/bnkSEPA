@@ -140,5 +140,5 @@ There are 4 settings you can edit in **secrets.py**:
   * **zip_pass** - password you will use when archving the file
   * **xl_file** - name of the XL file with your transactions
 
-![Secrets entries.py](./images/Configure-003.PNG "Where the different secrets.py codes are used").
+![Secrets entries.py](../images/Configure-003.PNG "Where the different secrets.py codes are used").
 
