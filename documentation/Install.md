@@ -5,13 +5,15 @@ Install bnkSEPA on your computer
 
 To install bnkSEPA you need to:
 
-  1. [Install Python v3.x](#Python)
-  2. [Install Microsoft C++ Build Tools](#MSBldTools)
-  3. [Download bnkSEPA](#DLbnkSEPA)
-  4. [Download 7Zip](#7Zip)
-  5. [Download support modules](#DLModules)
-  6. [Configure your settings](#UserConfig)
-  7. [Help the **bnkSEPA** project with a couple of clicks.](/documentation/HelpbnkSEPA.md)
+- [Install bnkSEPA on your computer](#install-bnksepa-on-your-computer)
+  - [Install Python v3.x](#install-python-v3x)
+  - [Install Microsoft C++ Build Tools](#install-microsoft-c-build-tools)
+  - [Install 7-Zip](#install-7-zip)
+  - [Download bnkSEPA](#download-bnksepa)
+    - [READ CAREFULLY](#read-carefully)
+  - [Download support modules](#download-support-modules)
+  - [Configure your settings](#configure-your-settings)
+  - [Configure the *secrets.py* file](#configure-the-secretspy-file)
 
 
 <a name="Python"></a>Install Python v3.x
@@ -137,8 +139,6 @@ There are 4 settings you can edit in **secrets.py**:
   * **zip_file** - name of the zip file you will use to zip the XL workbook with your transactions.
   * **zip_pass** - password you will use when archving the file
   * **xl_file** - name of the XL file with your transactions
-  * <span style="color:red">**bank_scte**</span> - **This is the password that is shared with your bank**
-
 
 ![Secrets entries.py](./images/Configure-003.PNG "Where the different secrets.py codes are used").
 

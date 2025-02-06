@@ -9,7 +9,7 @@
 # From: Kevin Txxxxx <xxxxxxxx@bov.com>
 # Date: Mon, Dec 11, 2023 at 9:25 AM
 # Subject: Important Payments Update - SEPA Direct Credit 11/12/2023
-# Email instruction: nly files in clear text (not Zipped with password) with .SCT extension will be accepted with immediate effect.
+# Email instruction: Only files in clear text (not Zipped with password) with .SCT extension will be accepted with immediate effect.
 #
 
 import argparse
@@ -70,16 +70,7 @@ if __name__ == '__main__':
         help='The password of the zip file',
         default=secrets.tmp_zippass()
     )
-    
-    '''
-    parser.add_argument(
-        "--bankSCTE",
-        type=str,
-        help='The password to archive the bank SCTE file',
-        default=secrets.bnk_scte()
-    )
-    '''
-    
+     
     parser.add_argument(
         "--xlfile",
         type=str,
