@@ -21,7 +21,7 @@ To install bnkSEPA you need to:
 
 ![Download Python from www.python.org](../images/InstallPython-001.PNG "Download Python").
 
-Go to the [Python Website](https://www.python.org) and from the Download tab select the latest version of Python for your platform.
+Go to the [Python Website](https://www.python.org) and from the Download tab Python for your platform. It has been verified to work with version 12.9.
 
 ![Install the Python installer](../images/InstallPython-002.PNG "Install Python").
 
