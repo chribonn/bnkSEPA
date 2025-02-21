@@ -142,3 +142,7 @@ There are 4 settings you can edit in **secrets.py**:
 
 ![Secrets entries.py](../images/Configure-003.PNG "Where the different secrets.py codes are used").
 
+
+## YouTube Video
+
+[[[![bnkSEPA Installation Guide video](https://i.sstatic.net/Vp2cE.png)](https://youtu.be/vt5fpE0bzSY)](https://youtu.be/x1cGcz2AZdQ?si=BHOqvvRp50qreqGp)](https://youtu.be/x1cGcz2AZdQ?si=BHOqvvRp50qreqGp)
