@@ -145,4 +145,4 @@ There are 4 settings you can edit in **secrets.py**:
 
 ## YouTube Video
 
-[![Watch the video](../images/2025-02-21.png)][https://youtu.be/x1cGcz2AZdQ)
+[![Watch the video](http://img.youtube.com/vi/x1cGcz2AZdQ/0.jpg)][https://www.youtube.com/watch?v=x1cGcz2AZdQ)
