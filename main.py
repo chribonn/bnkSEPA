@@ -1,15 +1,26 @@
 # Payments Business Electronic Banking Services
 # SEPA Credit Transfers file layout
-# Pain.001.001.03x (December (email) 2023)
+# Pain.001.001.09 (February 2025 (email))
 # Alan Bonnici - chribonn@gmail.com
-# Last update: 202312
-# version - 2.00.00
+# Last update: 202503
+# version - 2.10.00
 # Project repository: https://www.github.com/chribonn/bnkSEPA
 
-# From: Kevin Txxxxx <xxxxxxxx@bov.com>
-# Date: Mon, Dec 11, 2023 at 9:25 AM
-# Subject: Important Payments Update - SEPA Direct Credit 11/12/2023
-# Email instruction: Only files in clear text (not Zipped with password) with .SCT extension will be accepted with immediate effect.
+# From: Joseph Dxxxxx <xxxxxxxx@bov.com>
+# Date: Tue, Feb 25, 2025 at 12:01 PM
+# Subject: Action Needed for SEPA Payment File Formats
+# Email instruction: 
+#        Updates you need to make to your ‘SEPA Payment File Formats’
+#
+#        The main change from the previous version is that this version supports more structured fields in the postal address. 
+#        The structured address details of payee must meet the following requirements:
+#
+#        a. Data element “Address Line” < Adrline> cannot be used.
+#        b. The Data elements “Town Name” < TwnNm> and “Country” <Ctry> must be used.
+#        c. Other Data elements like “Street Name” <StrtNm>,“Building Number” <BldgNb>,“Building Name” < BldgNm , “Post Code” <PstCd> etc may be used 
+#           depending on the components of the Address.
+#
+#        Also, kindly note change in header: Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.09">
 #
 
 import argparse

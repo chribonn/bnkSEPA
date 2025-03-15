@@ -19,7 +19,7 @@ def procXL(zip_path, xlsx_file):
     # Build the XML document
     nsmap = {
         'xsi': "http://www.w3.org/2001/XMLSchema-instance",
-        None: "urn:iso:std:iso:20022:tech:xsd:pain.001.001.03"
+        None: "urn:iso:std:iso:20022:tech:xsd:pain.001.001.09"
     }
     root = etree.Element('Document', nsmap=nsmap)
 
