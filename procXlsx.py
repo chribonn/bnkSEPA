@@ -4,7 +4,7 @@ import os
 import lxml.etree as etree
 
 
-def procXL(zip_path, xlsx_file):
+def procXL(zip_path, xlsx_file, err_dev):
     workbook = openpyxl.load_workbook(filename=xlsx_file, data_only=True)
     # check that the required sheets are in the Excel File
     setXLFiles = set(workbook.sheetnames)
@@ -13,7 +13,6 @@ def procXL(zip_path, xlsx_file):
 
         critical_err = 'The XL File is not structured properly'
         print(critical_err)
-        input('Press Enter to terminate.')
         raise Exception(critical_err)
 
     # Build the XML document
@@ -102,23 +101,52 @@ def bldCIRrow(sh, PmtInf, workbook, row):
     sEndToEndId = sh['B' + str(row)].value.strip()
     sCcy = sh['C' + str(row)].value.strip()
     sInstdAmt = '{0:.2f}'.format(sh['D' + str(row)].value)
-    sBIC = sh['E' + str(row)].value.strip()
+    sBICFI = sh['E' + str(row)].value.strip()
     sNm = sh['F' + str(row)].value.strip()
-    sAdrLine1 = sh['G5'].value
-    if sAdrLine1 is None:
-        sAdrLine1 = ''
+    
+    #################################################################
+    # Changes as per version v 8.7 of the SCT document - ACB 202503
+    sStrtNm = sh['G5'].value
+    if sStrtNm is None:
+        sStrtNm = ''
     else:
-        sAdrLine1 = sAdrLine1.strip()
-    sAdrLine2 = sh['H5'].value
-    if sAdrLine2 is None:
-        sAdrLine2 = ''
+        sStrtNm = sStrtNm.strip()
+    sBldgNb = sh['H5'].value
+    if sBldgNb is None:
+        sBldgNb = ''
     else:
-        sAdrLine2 = sAdrLine2.strip()
-    if sAdrLine1 == '':
-        sAdrLine1 = sAdrLine2
-    sIBAN = sh['I' + str(row)].value.strip()
-    sCd = sh['J' + str(row)].value.strip()
-    sUstrd = sh['K' + str(row)].value.strip()
+        sBldgNb = sBldgNb.strip()
+    sBldgNm = sh['I5'].value
+    if sBldgNm is None:
+        sBldgNm = ''
+    else:
+        sBldgNm = sBldgNm.strip()
+    sPstCd = sh['J5'].value
+    if sPstCd is None:
+        sPstCd = ''
+    else:
+        sPstCd = sPstCd.strip()
+    sTwnNm = sh['K5'].value
+    if sTwnNm is None:
+        sTwnNm = ''
+    else:
+        sTwnNm = sTwnNm.strip()
+    sCtry = sh['L5'].value
+    if sCtry is None:
+        sCtry = ''
+    else:
+        sCtry = sCtry.strip()
+
+    """
+    # Removed to reflect changes in address logic as per version v 8.7 of the SCT document - ACB 202503
+    if sStrtNm == '':
+        sStrtNm = sBldgNb
+    """
+    #################################################################
+
+    sIBAN = sh['M' + str(row)].value.strip()
+    sCd = sh['N' + str(row)].value.strip()
+    sUstrd = sh['O' + str(row)].value.strip()
 
     CdtTrfTxInf = etree.SubElement(PmtInf, "CdtTrfTxInf")
     PmtId = etree.SubElement(CdtTrfTxInf, "PmtId")
@@ -132,18 +160,41 @@ def bldCIRrow(sh, PmtInf, workbook, row):
     InstdAmt.text = sInstdAmt
     CdtrAgt = etree.SubElement(CdtTrfTxInf, "CdtrAgt")
     FinInstnId = etree.SubElement(CdtrAgt, "FinInstnId")
-    BIC = etree.SubElement(FinInstnId, "BIC")
-    BIC.text = sBIC
+    BICFI = etree.SubElement(FinInstnId, "BICFI")
+    BICFI.text = sBICFI
     Cdtr = etree.SubElement(CdtTrfTxInf, "Cdtr")
     Nm = etree.SubElement(Cdtr, "Nm")
     Nm.text = sNm
+    
+    """
+    # Removed to reflect changes in address logic as per version v 8.7 of the SCT document - ACB 202503
+    
     # Only fill in the subnodes if the address lines are not blank
-    if sAdrLine1 != "":
+    if sStrtNm != "":
         PstlAdr = etree.SubElement(Cdtr, "PstlAdr")
         AdrLine1 = etree.SubElement(PstlAdr, "AdrLine")
-        AdrLine1.text = sAdrLine1
+        AdrLine1.text = sStrtNm
         AdrLine2 = etree.SubElement(PstlAdr, "AdrLine")
-        AdrLine2.text = sAdrLine2
+        AdrLine2.text = sBldgNb
+    """
+    PstlAdr = etree.SubElement(Cdtr, "PstlAdr")
+    if sStrtNm != "":
+        StrtNm = etree.SubElement(PstlAdr, "StrtNm")
+        StrtNm.text = sStrtNm
+    if sBldgNb != "":
+        BldgNb = etree.SubElement(PstlAdr, "BldgNb")
+        BldgNb.text = sBldgNb
+    if sBldgNm != "":
+        BldgNm = etree.SubElement(PstlAdr, "BldgNm")
+        BldgNm.text = sBldgNm
+    if sPstCd != "":
+        PstCd = etree.SubElement(PstlAdr, "PstCd")
+        PstCd.text = sPstCd
+    TwnNm = etree.SubElement(PstlAdr, "TwnNm")
+    TwnNm.text = sTwnNm
+    Ctry = etree.SubElement(PstlAdr, "Ctry")
+    Ctry.text = sCtry
+    
     CdtrAcct = etree.SubElement(CdtTrfTxInf, "CdtrAcct")
     Id = etree.SubElement(CdtrAcct, "Id")
     IBAN = etree.SubElement(Id, "IBAN")
@@ -178,6 +229,9 @@ def bldPIR(PmtInf, computedPmtInfld, workbook):
     sReqdExctnDt = sh['G5'].value
     sReqdExctnDt = datetime.datetime.strftime(sReqdExctnDt, '%Y-%m-%d')
     sNm = sh['H5'].value.strip()
+    """
+    # Removed the address lines from the PIR section - ACB 202503
+    # as per version v 8.7 of the SCT document
     sAdrLine1 = sh['I5'].value
     if sAdrLine1 is None:
         sAdrLine1 = ''
@@ -190,8 +244,10 @@ def bldPIR(PmtInf, computedPmtInfld, workbook):
         sAdrLine2 = sAdrLine2.strip()
     if sAdrLine1 == '':
         sAdrLine1 = sAdrLine2
+    `"""
     sIBAN = sh['K5'].value.strip()
-    sCcy = sh['L5'].value.strip()
+    # Removed from the PIR section as per version v 8.7 of the SCT document - ACB 202503
+    # sCcy = sh['L5'].value.strip()
     sBIC = sh['M5'].value.strip()
 
     PmtInfId = etree.SubElement(PmtInf, "PmtInfId")
@@ -209,10 +265,15 @@ def bldPIR(PmtInf, computedPmtInfld, workbook):
     Cd = etree.SubElement(SvcLvl, "Cd")
     Cd.text = sCd
     ReqdExctnDt = etree.SubElement(PmtInf, "ReqdExctnDt")
-    ReqdExctnDt.text = sReqdExctnDt
+    # Added <Dt> subtag as per version v 8.7 of the SCT document - ACB 202503
+    Dt = etree.SubElement(ReqdExctnDt, "Dt")
+    Dt.text = sReqdExctnDt
     Dbtr = etree.SubElement(PmtInf, "Dbtr")
     Nm = etree.SubElement(Dbtr, "Nm")
     Nm.text = sNm
+    """
+    # Removed from the PIR section as per version v 8.7 of the SCT document - ACB 202503
+    
     # Only fill in the subnodes if the address lines are not blank
     if sAdrLine1 != "":
         PstlAdr = etree.SubElement(Dbtr, "PstlAdr")
@@ -222,12 +283,16 @@ def bldPIR(PmtInf, computedPmtInfld, workbook):
         if sAdrLine2 != "":
             AdrLine2 = etree.SubElement(PstlAdr, "AdrLine")
             AdrLine2.text = sAdrLine2
+    """
     DbtrAcct = etree.SubElement(PmtInf, "DbtrAcct")
     Id = etree.SubElement(DbtrAcct, "Id")
     IBAN = etree.SubElement(Id, "IBAN")
     IBAN.text = sIBAN
+    """
+    # Removed from the PIR section as per version v 8.7 of the SCT document - ACB 202503
     Ccy = etree.SubElement(DbtrAcct, "Ccy")
     Ccy.text = sCcy
+    """
     DbtrAgt = etree.SubElement(PmtInf, "DbtrAgt")
     FinInstnId = etree.SubElement(DbtrAgt, "FinInstnId")
     BIC = etree.SubElement(FinInstnId, "BIC")

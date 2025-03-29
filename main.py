@@ -3,25 +3,8 @@
 # Pain.001.001.09 (February 2025 (email))
 # Alan Bonnici - chribonn@gmail.com
 # Last update: 202503
-# version - 2.10.00
+# version - 2.00.00
 # Project repository: https://www.github.com/chribonn/bnkSEPA
-
-# From: Joseph Dxxxxx <xxxxxxxx@bov.com>
-# Date: Tue, Feb 25, 2025 at 12:01 PM
-# Subject: Action Needed for SEPA Payment File Formats
-# Email instruction: 
-#        Updates you need to make to your ‘SEPA Payment File Formats’
-#
-#        The main change from the previous version is that this version supports more structured fields in the postal address. 
-#        The structured address details of payee must meet the following requirements:
-#
-#        a. Data element “Address Line” < Adrline> cannot be used.
-#        b. The Data elements “Town Name” < TwnNm> and “Country” <Ctry> must be used.
-#        c. Other Data elements like “Street Name” <StrtNm>,“Building Number” <BldgNb>,“Building Name” < BldgNm , “Post Code” <PstCd> etc may be used 
-#           depending on the components of the Address.
-#
-#        Also, kindly note change in header: Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.09">
-#
 
 import argparse
 import procXlsx
@@ -29,6 +12,7 @@ import tempfile
 import os
 import zipfile
 import secrets
+import sys
 
 
 def extract_xl(zip_path, zip_file, zip_pass, xl_file, tmpdirname):
@@ -43,18 +27,15 @@ def extract_xl(zip_path, zip_file, zip_pass, xl_file, tmpdirname):
                 else:
                     critical_err = 'Unable to find zipped xls file'
                     print('\n\n' + critical_err+ '\n\n')
-                    input('Press Enter to terminate.')
                     raise Exception(critical_err)
         # if the zip file has any errors then it prints the error message which you wrote under the 'except' block
         except zipfile.BadZipFile:
             critical_err = 'File has errors'
             print('\n\n' + critical_err+ '\n\n')
-            input('Press Enter to terminate.')
             raise Exception(critical_err)
     else:
         critical_err = 'Unable to process file'
         print('\n\n' + critical_err+ '\n\n')
-        input('Press Enter to terminate.')
         raise Exception(critical_err)
 
 
@@ -93,18 +74,31 @@ if __name__ == '__main__':
     if args.zipname is None or len(args.zipname) < 1:
         critical_err = 'Zip filename is mandatory'
         print('\n\n' + critical_err+ '\n\n')
-        input('Press Enter to terminate.')
         raise Exception(critical_err)
 
     print('Processing : ', args.zippath, "\\", args.zipname, sep='')
 
+    # Capture processing errors to a file
+    error_log_file = os.path.join(zip_path, "error_log.txt")
+    # Redirect standard error to a file
+    sys.stderr = open(error_log_file, "w")  # Open in append mode
+    
     # Extract the Zip
     with tempfile.TemporaryDirectory() as tmpdirname:
-        xlsx_filepath = extract_xl(args.zippath, args.zipname, args.zippass, args.xlfile, tmpdirname)
-        procXlsx.procXL(args.zippath, xlsx_filepath)
+        try:
+            xlsx_filepath = extract_xl(args.zippath, args.zipname, args.zippass, args.xlfile, tmpdirname)
+            procXlsx.procXL(args.zippath, xlsx_filepath, sys.stderr)
 
-        # clean up
-        del xlsx_filepath, tmpdirname
+            # clean up
+            del xlsx_filepath, error_log_file
+        except Exception as e:
+            print(f"An error occurred: {e}", file=sys.stderr)
 
+    sys.stderr.close()
+    # Check if the error log file has been written to
+    if os.path.exists(error_log_file) and os.path.getsize(error_log_file) > 0:
+        print(f"\n\nErrors were logged to: {error_log_file}\n\n")
+    else:
         print('\n\nProcess completed successfully\n\n')
-        input('Press Enter to terminate.')
+
+    input('Press Enter to terminate.')
