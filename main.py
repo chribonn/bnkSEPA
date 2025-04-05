@@ -90,15 +90,19 @@ if __name__ == '__main__':
             procXlsx.procXL(args.zippath, xlsx_filepath, sys.stderr)
 
             # clean up
-            del xlsx_filepath, error_log_file
+            del xlsx_filepath
         except Exception as e:
             print(f"An error occurred: {e}", file=sys.stderr)
 
     sys.stderr.close()
+
     # Check if the error log file has been written to
     if os.path.exists(error_log_file) and os.path.getsize(error_log_file) > 0:
         print(f"\n\nErrors were logged to: {error_log_file}\n\n")
     else:
         print('\n\nProcess completed successfully\n\n')
+        os.remove(error_log_file) 
+
+    del error_log_file
 
     input('Press Enter to terminate.')

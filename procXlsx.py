@@ -2,10 +2,13 @@ import openpyxl
 import datetime
 import os
 import lxml.etree as etree
+import warnings
 
 
 def procXL(zip_path, xlsx_file, err_dev):
+    warnings.simplefilter(action='ignore', category=UserWarning)
     workbook = openpyxl.load_workbook(filename=xlsx_file, data_only=True)
+    warnings.resetwarnings()
     # check that the required sheets are in the Excel File
     setXLFiles = set(workbook.sheetnames)
     if not {'Header Record', 'Payment Information Record', 'Credit Instruction Record', 'Control',
