@@ -3,7 +3,7 @@
 
 # This contains the name of the ZIP File that stores within it the Excel XLSM file
 def zip_file():
-    return 'BnkSEPA.zip'
+    return 'Test.zip'
 
 # This contains the password that has been used to encrypt the ZIP file that contains the Excel XLSM file
 def tmp_zippass():
@@ -11,4 +11,4 @@ def tmp_zippass():
 
 # This contains the name of the Excel XLSM file that contain the transactions that need to be processed
 def xl_file():
-    return 'BnkSEPA.xlsm'
+    return 'Test.xlsm'

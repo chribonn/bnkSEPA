@@ -79,7 +79,7 @@ if __name__ == '__main__':
     print('Processing : ', args.zippath, "\\", args.zipname, sep='')
 
     # Capture processing errors to a file
-    error_log_file = os.path.join(zip_path, "error_log.txt")
+    error_log_file = os.path.join(args.zippath, "error_log.txt")
     # Redirect standard error to a file
     sys.stderr = open(error_log_file, "w")  # Open in append mode
     
