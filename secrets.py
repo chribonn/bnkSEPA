@@ -1,6 +1,10 @@
 # This file should not be loaded to GitHub WITH LIVE DATA
 # =======================================================
 
+# The default path where theZIP File is located
+def zip_path():
+    return r'C:\Users\Syncovery\Documents\bnkSEPA\.tests'
+
 # This contains the name of the ZIP File that stores within it the Excel XLSM file
 def zip_file():
     return 'Test.zip'
@@ -12,3 +16,4 @@ def tmp_zippass():
 # This contains the name of the Excel XLSM file that contain the transactions that need to be processed
 def xl_file():
     return 'Test.xlsm'
+

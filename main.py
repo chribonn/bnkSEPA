@@ -54,7 +54,7 @@ if __name__ == '__main__':
         "--zippath",
         type=str,
         help='Directory where the file is located',
-        default=tempfile.gettempdir()
+        default=secrets.zip_path()
     )
     parser.add_argument(
         "--zippass",

@@ -143,3 +143,4 @@ cython_debug/
 /.project source/
 /.tests/
 /.tests/*
+secrets.py
