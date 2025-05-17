@@ -3,7 +3,7 @@
 
 # The default path where theZIP File is located
 def zip_path():
-    return r'C:\Users\Syncovery\Documents\bnkSEPA\.tests'
+    return r'C:\.tests'
 
 # This contains the name of the ZIP File that stores within it the Excel XLSM file
 def zip_file():
