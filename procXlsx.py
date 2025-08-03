@@ -109,32 +109,36 @@ def bldCIRrow(sh, PmtInf, workbook, row):
     
     #################################################################
     # Changes as per version v 8.7 of the SCT document - ACB 202503
-    sStrtNm = sh['G5'].value
+    sStrtNm = sh['G' + str(row)].value
     if sStrtNm is None:
         sStrtNm = ''
     else:
         sStrtNm = sStrtNm.strip()
-    sBldgNb = sh['H5'].value
+    sBldgNb = sh['H' + str(row)].value
     if sBldgNb is None:
         sBldgNb = ''
+    elif not isinstance(sBldgNb, str):
+        sBldgNb = str(sBldgNb).strip()
     else:
         sBldgNb = sBldgNb.strip()
-    sBldgNm = sh['I5'].value
+    sBldgNm = sh['I' + str(row)].value
     if sBldgNm is None:
         sBldgNm = ''
     else:
         sBldgNm = sBldgNm.strip()
-    sPstCd = sh['J5'].value
+    sPstCd = sh['J' + str(row)].value
     if sPstCd is None:
         sPstCd = ''
+    elif not isinstance(sPstCd, str):
+        sPstCd = str(sPstCd).strip()
     else:
         sPstCd = sPstCd.strip()
-    sTwnNm = sh['K5'].value
+    sTwnNm = sh['K' + str(row)].value
     if sTwnNm is None:
         sTwnNm = ''
     else:
         sTwnNm = sTwnNm.strip()
-    sCtry = sh['L5'].value
+    sCtry = sh['L' + str(row)].value
     if sCtry is None:
         sCtry = ''
     else:
