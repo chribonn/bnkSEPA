@@ -1,7 +1,9 @@
 # Payments Business Electronic Banking Services
 # SEPA Credit Transfers file layout
-# Pain.001.001.09 (February 2025 (email))
+# Pain.001.001.09 (February 2025)
 # Alan Bonnici - chribonn@gmail.com
+# U: https://www.AlanBonnici.com
+# Yt: https://www.youtube.com/@chribonn
 # Last update: 202503
 # version - 2.00.00
 # Project repository: https://www.github.com/chribonn/bnkSEPA

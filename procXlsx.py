@@ -220,17 +220,40 @@ def bldPIR(PmtInf, computedPmtInfld, workbook):
     if sPmtInfId is None:
         sPmtInfId = computedPmtInfld
     sPmtInfId = sPmtInfId.strip()
-    # Cechk for a space condition
+    # Check for a space condition
     if sPmtInfId == '':
         sPmtInfId = computedPmtInfld.strip()
 
     sPmtMtd = sh['B5'].value.strip()
     sBtchBookg = sh['C5'].value.strip()
     sNbOfTxs = str(int(sh['D5'].value))
-    sCtrlSum = '{0:.2f}'.format(sh['E5'].value)
+    try:
+        sNbOfTxs = str(int(sNbOfTxs))
+    except:
+        critical_err = 'Payment Information Record: Format error : Cell D5'
+        print('\n\n' + critical_err + '\n\n')
+        input('Press Enter to terminate.')
+        raise Exception(critical_err)
+    
+    try:
+        sCtrlSum = '{0:.2f}'.format(sh['E5'].value)
+    except:
+        critical_err = 'Payment Information Record: Format error : Cell E5'
+        print('\n\n' + critical_err + '\n\n')
+        input('Press Enter to terminate.')
+        raise Exception(critical_err)
+
     sCd = sh['F5'].value.strip()
-    sReqdExctnDt = sh['G5'].value
-    sReqdExctnDt = datetime.datetime.strftime(sReqdExctnDt, '%Y-%m-%d')
+    
+    try:
+        sReqdExctnDt = sh['G5'].value
+        sReqdExctnDt = datetime.datetime.strftime(sReqdExctnDt, '%Y-%m-%d')
+    except:
+        critical_err = 'Payment Information Record: Format error : Cell G5'
+        print('\n\n' + critical_err + '\n\n')
+        input('Press Enter to terminate.')
+        raise Exception(critical_err)
+        
     sNm = sh['H5'].value.strip()
     """
     # Removed the address lines from the PIR section - ACB 202503
@@ -298,8 +321,8 @@ def bldPIR(PmtInf, computedPmtInfld, workbook):
     """
     DbtrAgt = etree.SubElement(PmtInf, "DbtrAgt")
     FinInstnId = etree.SubElement(DbtrAgt, "FinInstnId")
-    BIC = etree.SubElement(FinInstnId, "BIC")
-    BIC.text = sBIC
+    BICFI = etree.SubElement(FinInstnId, "BICFI")
+    BICFI.text = sBIC
 
     return PmtInf
 
@@ -321,10 +344,31 @@ def bldHeader(CstmrCdtTrfInitn, computedMsgId, workbook):
     try:
         sCreDtTm = datetime.datetime.strptime(sCreDtTm, "%Y-%m-%d %H:%M:%S.%f").replace(microsecond=0).isoformat()
     except:
-        sCreDtTm = datetime.datetime.strptime(sCreDtTm, "%Y-%m-%d %H:%M:%S").isoformat()
+        try:
+            sCreDtTm = datetime.datetime.strptime(sCreDtTm, "%Y-%m-%d %H:%M:%S").isoformat()
+        except:
+            critical_err = 'Header Record: Format error : Cell B5'
+            print('\n\n' + critical_err + '\n\n')
+            input('Press Enter to terminate.')
+            raise Exception(critical_err)
 
     sNbOfTxs = str(int(sh['C5'].value))
-    sCtrlSum = '{0:.2f}'.format(sh['D5'].value)
+    try:
+        sNbOfTxs = str(int(sNbOfTxs))
+    except:
+        critical_err = 'Header Record: Format error : Cell C5'
+        print('\n\n' + critical_err + '\n\n')
+        input('Press Enter to terminate.')
+        raise Exception(critical_err)
+        
+    try:
+        sCtrlSum = '{0:.2f}'.format(sh['D5'].value)
+    except:
+        critical_err = 'Header Record: Format error : Cell D5'
+        print('\n\n' + critical_err + '\n\n')
+        input('Press Enter to terminate.')
+        raise Exception(critical_err)
+    
     sNm = sh['E5'].value.strip()
     sId = sh['F5'].value.strip()
 

@@ -37,8 +37,16 @@
   * Tested (and env upgrade) to Pyhon 3.11
 
 2.00.000	
-  * The generated **SCT** file is not transformed into a password-protected **SCTE** file.  All logic related to this function has been removed.
-  * Minor documentation corrections
+* Updates as described by SEPA Credit Transfers file layout Pain.001.001.09 v 8.7 dated 23/01/2025
+* Changes:
+    * Payment Information Record worksheet (tag adjustments)
+    * Credit Instruction Record worksheet (new tags added, tags renamed)
+    * Client Payee Data worksheet (adjustment of tags to align with Credit Instruction Record worksheet)
+    * Control Data (Hidden) worksheet. Added the list of country codes
+    * Control Data (Hidden) worksheet. Adjusted Transaction date range
+    * Log file generated if there are errors
+    * Data conversion checks
+    * XL formatting changes
 
 ## Help the project
 
