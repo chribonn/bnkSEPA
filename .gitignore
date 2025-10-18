@@ -140,4 +140,4 @@ cython_debug/
 .project source
 .tests/
 .vscode/
-.build_exe/*.*
+build_exe/
