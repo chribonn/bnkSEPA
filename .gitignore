@@ -135,11 +135,9 @@ dmypy.json
 cython_debug/
 
 # Program specific modules
-/.idea/
-/.idea/*
-/.idea/inspectionProfiles/
-/.idea/runConfigurations/
-/.project source/*
-/.project source/
-/.tests/
-/.tests/*
+.idea/
+.idea/inspectionProfiles/
+.project source
+.tests/
+.vscode/
+.build_exe/*.*

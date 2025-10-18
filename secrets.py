@@ -15,5 +15,5 @@ def tmp_zippass():
 
 # This contains the name of the Excel XLSM file that contain the transactions that need to be processed
 def xl_file():
-    return 'Test.xlsm'
+    return 'BnkSEPA.xlsm'
 

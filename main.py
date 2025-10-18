@@ -4,8 +4,8 @@
 # Alan Bonnici - chribonn@gmail.com
 # U: https://www.AlanBonnici.com
 # Yt: https://www.youtube.com/@chribonn
-# Last update: 202503
-# version - 2.00.00
+# Last update: 202510
+# version - 2.10.00
 # Project repository: https://www.github.com/chribonn/bnkSEPA
 
 import argparse
