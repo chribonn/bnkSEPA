@@ -14,12 +14,13 @@ To install bnkSEPA you need to:
   - [Download support modules](#download-support-modules)
   - [Configure your settings](#configure-your-settings)
   - [Configure the *secrets.py* file](#configure-the-secretspy-file)
+  - [YouTube Video](#youtube-video)
 
 
 <a name="Python"></a>Install Python v3.x
 -------------------
 
-![Download Python from www.python.org](../images/InstallPython-001.PNG "Download Python").
+![Download Python from www.python.org](../images/InstallPython-001.PNG "Download Python"). Has been verified to work with **v3.13.2**.
 
 Go to the [Python Website](https://www.python.org) and from the Download tab Python for your platform. It has been verified to work with version 12.9.
 
@@ -142,3 +143,7 @@ There are 4 settings you can edit in **secrets.py**:
 
 ![Secrets entries.py](../images/Configure-003.PNG "Where the different secrets.py codes are used").
 
+
+## YouTube Video
+
+[![bnkSEPA Installation Guide](http://img.youtube.com/vi/x1cGcz2AZdQ/0.jpg)](https://www.youtube.com/watch?v=x1cGcz2AZdQ)

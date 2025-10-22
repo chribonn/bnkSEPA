@@ -71,6 +71,11 @@ Double click the bnkSEPA icon and wait for the file to process the transactions.
 Once this is done, collect the <span style="color:red">~~**SCTE**~~</span> **SCT** file from the processing directory and ~~forward~~ <span style="color:red">upload</span> it to the bank.
 
 
+### Clearing the CIR Sheet
+
+On the right of the CIR worksheet there is a button titled **Reset Sheet**. Clicking on this button will clear the payment sheet (Macros need to be enabled).
+
+
 ## Help the project
 
 [Click here](/documentation/HelpbnkSEPA.md) to read how you can help the project.
